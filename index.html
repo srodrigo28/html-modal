@@ -5,6 +5,7 @@
     <!-- <script defer src="./assets/script.js"></script> -->
     <link rel="stylesheet" href="./assets/style-modal.css">
     <link rel="stylesheet" href="./assets/style-01/style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script defer src="./assets/modal.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -36,6 +37,19 @@
         </header>
         <main>
             <h1>teste</h1>
+
+            <div class="ctx-graficos">
+                <section>
+                    <h2>Grafico 1</h2>
+                    <div id="myPlot1"></div>
+                </section>
+
+                <section>
+                    <h2>Grafico 2</h2>
+                    <div id="myPlot2"></div>
+                </section>
+
+            </div>
         </main>
     </dialog>
  
@@ -62,4 +76,37 @@
             </div>
         </form>
     </dialog>
+
+    <script>
+        function grafico1(){
+            const semestre1 = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+            const total1 = [5500, 6200, 7400, 8600, 9600, 9800, 7600, 7400, 8600, 9600, 9800, 7600];
+
+            const data = [{
+            x:semestre1,
+            y:total1,
+            type:"bar",
+            orientation:"v",
+            marker: {color:"green"}
+        }];
+
+        const layout = {title:"Entradas Mês"};
+
+        Plotly.newPlot("myPlot1", data, layout);
+        }
+        
+        function grafico2(){
+            const xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
+            const yArray = [55, 49, 44, 24, 15];
+
+            const layout = {title:"World Wide Wine Production"};
+
+            const data = [{labels:xArray, values:yArray, type:"pie"}];
+
+            return Plotly.newPlot("myPlot2", data, layout);
+        }
+        grafico1()
+        grafico2()
+    </script>
+</body>
 </html>

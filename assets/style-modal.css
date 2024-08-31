@@ -30,6 +30,17 @@ button{
     margin-right: 10px;
     width: 80px;
 }
+/** GRAFICO */
+.ctx-graficos{
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-center;
+    background-color: red;
+}
+.ctx-graficos section{
+    max-width: 45%;
+}
 /** button:nth-last-child(){} */
 #btn-cad{
     background-color: #141;
