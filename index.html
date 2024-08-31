@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- <script defer src="./assets/script.js"></script> -->
+    <link rel="stylesheet" href="./assets/style-modal.css">
+    <link rel="stylesheet" href="./assets/style-01/style.css">
+    <script defer src="./assets/modal.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form>
+        <label for="email">E-mail</label> <br>
+        <input type="email" id="email" > <br><br>
+
+        <label for="password">Senha</label> <br>
+        <input type="password" id="password" > <br><br>
+
+        <button 
+            id="btn-entrar" 
+            class="open-modal" 
+            data-modal="modal-1"
+        >Entrar</button>
+        <button 
+            id="btn-cadastrar"  
+            class="open-modal" 
+            data-modal="modal-2"
+        >Cadastrar</button>
+    </form>
+
+    <dialog id="modal-1"> <!-- Modal Painel-->
+        <header>
+            <h2>Seja bem vindo <span id="user"></span></h2>
+            <button class="close-modal" data-modal="modal-1">X</button>
+        </header>
+        <main>
+            <h1>teste</h1>
+        </main>
+    </dialog>
+ 
+    <dialog id="modal-2"> <!-- Modal Cadastro-->
+        <header>
+            <h2>Cadastrar</h2>
+            <button class="close-modal" data-modal="modal-2">X</button>
+        </header>
+        <form id="cadastro-form">
+            <label for="nome">Nome Completo</label>
+            <input type="text" id="nome" >
+
+            <label for="mail">E-mail</label>
+            <input type="text" id="mail" >
+
+            <label for="telefone">Nome Completo</label>
+            <input type="text" id="telefone" >
+
+            <label for="senha">Senha</label>
+            <input type="text" id="senha" >
+
+            <div class="btn-group">
+                <button id="btn-cadastrar">Cadastrar</button>
+            </div>
+        </form>
+    </dialog>
+</html>
