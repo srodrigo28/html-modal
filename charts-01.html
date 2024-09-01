@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart.js Example</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    
+
+    <div style="width: 100%; display: flex; align-items: center; justify-content: center; height: 100vh; gap: 50px;" class="container">
+        <div style="width: 50vw; display: flex; align-items: center; justify-content: center; height: 50vh; padding: 20px;" class="items">
+            <canvas id="myChart1" width="400" height="400"></canvas>
+        </div>
+        <div style="width: 50vw; display: flex; align-items: center; justify-content: center; height: 50vh; padding: 20px;" class="items">
+            <canvas id="myChart2" width="400" height="400"></canvas>
+        </div>
+    </div>
+
+    <style>
+        @media screen and (max-width: 2800px) {
+            .container{
+                height: 90vh !important;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                gap: 30px !important;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+
+            }
+            .items{
+                height: 80%!important;
+                width: 90%!important;
+            }
+            canvas{
+                height: 100% !important;
+                width: 100% !important;
+            }
+        }
+        @media screen and (max-width: 1921px) {
+            .container{
+                height: 90vh !important;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                gap: 30px !important;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+            }
+            .items{
+                height: 80%!important;
+                width: 90%!important;
+            }
+            canvas{
+                height: 100% !important;
+                width: 100% !important;
+            }
+        }
+        @media screen and (max-width: 1300px) {
+            .container{
+                height: 100% !important;
+                padding-top: 50px;
+                padding-bottom: 50px;
+                display: flex;
+                gap: 30px !important;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .items{
+                height: 100%!important;
+                width: 90%!important;
+            }
+            canvas{
+                height: 80% !important;
+                width: 100% !important;
+            }
+        }
+    </style>
+    
+    <script>
+        function myChart1(){
+            const ctx = document.getElementById('myChart1').getContext('2d');
+            const myChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfico (bar, line, pie, etc.)
+            data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        myChart1()
+
+        function myChart2(){
+            const ctx = document.getElementById('myChart2').getContext('2d');
+            const myChart = new Chart(ctx, {
+            type: 'bar', // Tipo de gráfico (bar, line, pie, etc.)
+            data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            datasets: [{
+                label: 'My First Dataset',
+                data: [65, 59, 80, 81, 56, 55, 40],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 99, 132, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 99, 132, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+        myChart2()
+    </script>
+</body>
+</html>
