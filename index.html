@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <!-- <script defer src="./assets/script.js"></script> -->
     <link rel="stylesheet" href="./assets/style-modal.css">
-    <link rel="stylesheet" href="./assets/style-01/style.css">
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script defer src="./assets/modal.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +23,7 @@
             data-modal="modal-1"
         >Entrar</button>
         <button 
-            id="btn-cadastrar"  
+            id="btn-cadastra2"  
             class="open-modal" 
             data-modal="modal-2"
         >Cadastrar</button>
@@ -39,16 +38,15 @@
             <h1>teste</h1>
 
             <div class="ctx-graficos">
-                <section>
+                <section class="ctx-graficos-itens">
                     <h2>Grafico 1</h2>
-                    <div id="myPlot1"></div>
+                    <div id="myPlot1" class="myPlot"></div>
                 </section>
-
-                <section>
+                
+                <section class="ctx-graficos-itens">
                     <h2>Grafico 2</h2>
-                    <div id="myPlot2"></div>
+                    <div id="myPlot2" class="myPlot"></div>
                 </section>
-
             </div>
         </main>
     </dialog>
@@ -79,29 +77,26 @@
 
     <script>
         function grafico1(){
-            const semestre1 = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-            const total1 = [5500, 6200, 7400, 8600, 9600, 9800, 7600, 7400, 8600, 9600, 9800, 7600];
+            const semestre1 = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+            const total1 = [5500, 6200, 7400, 8600, 9600, 9800];
 
-            const data = [{
-            x:semestre1,
-            y:total1,
-            type:"bar",
-            orientation:"v",
-            marker: {color:"green"}
-        }];
+            const data = [{ 
+                x:semestre1, y:total1, type:"bar", 
+                orientation:"v",   marker: {color:"blue"}
+            }];
+            const layout = {title:"Entradas Mês"};
 
-        const layout = {title:"Entradas Mês"};
-
-        Plotly.newPlot("myPlot1", data, layout);
+            Plotly.newPlot("myPlot1", data, layout);
         }
         
         function grafico2(){
-            const xArray = ["Italy", "France", "Spain", "USA", "Argentina"];
-            const yArray = [55, 49, 44, 24, 15];
+            const xArray = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+            const yArray = [5500, 6200, 7400, 8600, 9600, 9800];
 
-            const layout = {title:"World Wide Wine Production"};
-
-            const data = [{labels:xArray, values:yArray, type:"pie"}];
+            const layout = {title:"Entradas Mês"};
+            const data = [{
+                labels:xArray, values:yArray, type:"pie", marker: {color:"rgba(255,0,0,0.6)"}
+            }];
 
             return Plotly.newPlot("myPlot2", data, layout);
         }

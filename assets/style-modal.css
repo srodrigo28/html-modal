@@ -30,17 +30,44 @@ button{
     margin-right: 10px;
     width: 80px;
 }
+
 /** GRAFICO */
-.ctx-graficos{
-    width: 100%;
+main div.ctx-graficos {
+    width: 90%;
     display: flex;
-    gap: 20px;
-    justify-content: space-center;
-    background-color: red;
+    margin: auto;
 }
-.ctx-graficos section{
-    max-width: 45%;
+
+.ctx-graficos-itens{
+    padding: 10px;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border: 5px solid red;
 }
+
+.ctx-graficos-itens .myPlot{
+    display: flex1;
+    border: 5px solid green;
+}
+
+
+@media screen and (max-width: 1500px) {
+    .ctx-graficos section{
+        background-color: red;
+        width: 50rem;        
+    }
+    .ctx-graficos section div{
+        display: flex;
+        flex-direction: column;
+        width: 40rem;
+    }
+}
+
 /** button:nth-last-child(){} */
 #btn-cad{
     background-color: #141;
