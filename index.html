@@ -10,23 +10,25 @@
     <title>Login</title>
 </head>
 <body>
-    <form>
-        <label for="email">E-mail</label> <br>
-        <input type="email" id="email" > <br><br>
+    <img src="https://southgaterealtyllc.com/wp-content/uploads/2017/12/shutterstock_735875389.jpg" alt="">
+    <form class="form-login">
+        <h2 style="margin-bottom: 5px;">Entre na sua conta</h2>
+        <small style="margin-bottom: 25px;">Ou crie sua conta se não tiver</small>
 
-        <label for="password">Senha</label> <br>
-        <input type="password" id="password" > <br><br>
+        <div class="a">
+            <label for="email">E-mail</label> <br>
+            <input type="email" id="email" >
+        </div>
 
-        <button 
-            id="btn-entrar" 
-            class="open-modal" 
-            data-modal="modal-1"
-        >Entrar</button>
-        <button 
-            id="btn-cadastra2"  
-            class="open-modal" 
-            data-modal="modal-2"
-        >Cadastrar</button>
+        <div class="a">
+            <label for="password">Senha</label> <br>
+            <input type="password" id="password" >
+        </div>
+
+        <div class="btn-group">
+            <button id="btn-entrar" class="open-modal" data-modal="modal-1" >Entrar</button>
+            <button id="btn-cadastra2" class="open-modal" data-modal="modal-2" >Cadastrar</button>
+        </div>
     </form>
 
     <dialog id="modal-1"> <!-- Modal Painel-->
@@ -35,8 +37,7 @@
             <button class="close-modal" data-modal="modal-1">X</button>
         </header>
         <main>
-            <h1>teste</h1>
-
+            <h1>Gráfico</h1>
             <div class="ctx-graficos">
                 <div class="ctx-graficos-itens">
                     <h2>Janeiro a Junho</h2>
@@ -48,7 +49,6 @@
                     <canvas id="grafico2" class="grafico" height="200"></canvas>
                 </div>
             </div>
-
         </main>
     </dialog>
  
