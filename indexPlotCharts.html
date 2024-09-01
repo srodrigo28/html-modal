@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <!-- <script defer src="./assets/script.js"></script> -->
     <link rel="stylesheet" href="./assets/style-modal.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script defer src="./assets/modal.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -38,17 +38,16 @@
             <h1>teste</h1>
 
             <div class="ctx-graficos">
-                <div class="ctx-graficos-itens">
-                    <h2>Janeiro a Julho</h2>
-                    <canvas id="grafico1" class="grafico" height="200"></canvas>
-                </div>
-
-                <div class="ctx-graficos-itens">
-                    <h2>Agosto a Dezembro</h2>
-                    <canvas id="grafico2" class="grafico" height="200"></canvas>
-                </div>
+                <section class="ctx-graficos-itens">
+                    <h2>Grafico 1</h2>
+                    <div id="myPlot1" class="myPlot"></div>
+                </section>
+                
+                <section class="ctx-graficos-itens">
+                    <h2>Grafico 2</h2>
+                    <div id="myPlot2" class="myPlot"></div>
+                </section>
             </div>
-
         </main>
     </dialog>
  
@@ -78,49 +77,28 @@
 
     <script>
         function grafico1(){
-            const ctx = document.getElementById('grafico1');
-            labelX = ["janeiro", "fevereiro", "março", "abril", "Maio", "junho"];
-            labelY = [12, 19, 15, 18, 23, 27];
+            const semestre1 = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+            const total1 = [5500, 6200, 7400, 8600, 9600, 9800];
 
-            new Chart(ctx, {
-            type: 'bar',
-            data: {
-                    labels: labelX,
-                    datasets: [{
-                    label: '# 1 Semestre ',
-                    data: labelY,
-                    borderWidth: 1
-            }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-            });
+            const data = [{ 
+                x:semestre1, y:total1, type:"bar", 
+                orientation:"v",   marker: {color:"blue"}
+            }];
+            const layout = {title:"Entradas Mês"};
+
+            Plotly.newPlot("myPlot1", data, layout);
         }
         
         function grafico2(){
-            const ctx = document.getElementById('grafico2');
-            labelX = ["julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
-            labelY = [12, 19, 15, 18, 23, 27];
+            const xArray = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho"];
+            const yArray = [5500, 6200, 7400, 8600, 9600, 9800];
 
-            new Chart(ctx, {
-            type: 'bar',
-            data: {
-                    labels: labelX,
-                    datasets: [{
-                    label: '# 2 Semestre ',
-                    data: labelY,
-                    borderWidth: 1
-            }]
-            },
-            options: {
-                scales: {
-                    y: { beginAtZero: true }
-                }
-            }
-            });
+            const layout = {title:"Entradas Mês"};
+            const data = [{
+                labels:xArray, values:yArray, type:"pie", marker: {color:"rgba(255,0,0,0.6)"}
+            }];
+
+            return Plotly.newPlot("myPlot2", data, layout);
         }
         grafico1()
         grafico2()
