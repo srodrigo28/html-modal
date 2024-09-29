@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal 1</title>
+</head>
+<body>
+    <button id="abrir">Abrir</button>
+    <button id="fechar">Fechar</button>
+    <dialog close>
+        <h2>Titulo Produto</h2>
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Velit nulla hic necessitatibus praesentium iste iusto suscipit nam, 
+            dolores dolorum sequi quasi fugiat aspernatur molestias perferendis 
+            voluptatibus amet illum itaque maiores.
+        </p>
+
+        <button id="fechar2">X</button>
+    </dialog>
+
+    <script>
+        let abrir = document.querySelector("#abrir")
+        let fechar = document.querySelector("#fechar")
+        let fechar2 = document.querySelector("#fechar2")
+        let modal = document.querySelector("dialog")
+
+        fechar.addEventListener("click", () =>{
+            modal.close()
+
+            fechar2.close()
+        })
+
+        abrir.addEventListener("click", () =>{
+            // modal.show()
+            modal.showModal()
+        })
+
+    </script>
+
+    <style>
+        dialog::backdrop{
+            background-color: #f11616;
+        }
+        dialog {
+            width: 300px;
+            height: 250px;
+            border-radius: 10px;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+    </style>
+</body>
+</html
